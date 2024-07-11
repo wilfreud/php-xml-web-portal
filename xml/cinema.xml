@@ -18,7 +18,7 @@ cinema.dtd">
     <spectateur>4/5</spectateur>
     <description>
       <paragraphe>
-        <intrigue></intrigue>
+        <intrigue>Attaque Tigrine!</intrigue>
         <horaires>
           <horaire id="1">
               <jour>Mercredi | Samedi</jour>
@@ -177,7 +177,7 @@ cinema.dtd">
     <spectateur>4.5/5</spectateur>
     <description>
       <paragraphe>
-        <intrigue></intrigue>
+        <intrigue>Nein! English!</intrigue>
         <horaires>
           <horaire id="1">
               <jour>Vendredi | Samedi</jour>

@@ -18,9 +18,9 @@ class CinemaController
         return $this->movies->film;
     }
 
-    public function getMovie($id)
+    public function getMovie(int $id)
     {
-        return $this->movies->film; //[$id] || null;
+        return $this->movies->film[$id];
     }
 
     public function addMovie($title, $director, $year, $genre)
