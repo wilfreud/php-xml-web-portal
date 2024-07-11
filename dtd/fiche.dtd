@@ -1,0 +1,25 @@
+<!ELEMENT fiche(coordonne, carte, menus?)>
+<!ELEMENT coordonne(nom, adresse, nomRestaurateur, descriptionCoordonne?)>
+<!ELEMENT nom(#PCDATA)>
+<!ELEMENT adresse(#PCDATA)>
+<!ELEMENT nomRestaurateur(#PCDATA)>
+<!ELEMENT descriptionCoordonne(listes | paragraphes | #PCDATA)+>
+<!ELEMENT listes(#PCDATA)>
+<!ELEMENT paragraphes(#PCDATA, image+)>
+<!ELEMENT image EMPTY>
+<!ATTLIST image url (""|""|"") #REQUIRED
+                position (gauche | droite | centre) #REQUIRED >
+<!ELEMENT carte(plat+)>
+<!ELEMENT plat(indication, prixP, descriptionP?)>
+<!ELEMENT indication(entrée | dessert | plat | fromage)>
+<!ELEMENT prix(#PCDATA)>
+<!ELEMENT descriptionP(paragraphe)>
+<!ELEMENT paragraphe(#PCDATA)>
+<!ELEMENT menus(titre, descriptionM, prixM, plat+)>
+<!ELEMENT titre(#PCDATA)>
+<!ELEMENT description(#PCDATA)>
+<!ELEMENT prix(#PCDATA)>
+<!ELEMENT plat(indication, prixP, descriptionP?)>
+<!ELEMENT indication(entrée | dessert | plat | fromage)>
+<!ELEMENT prix(#PCDATA)>
+<!ELEMENT descriptionP(paragraphe)>

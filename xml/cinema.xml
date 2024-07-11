@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<!DOCTYPE cinema SYSTEM "dtd/
+cinema.dtd">
+<cinema>
+  <film>
+    <titre>Les Brigades du Tigre</titre>
+    <duree>2h 5min</duree>
+    <genre>Policier</genre>
+    <realisateur>Jérôme Cornuau</realisateur>
+    <acteurs>
+      <acteur>C. Cornillac</acteur>
+      <acteur>D. Kruger</acteur>
+      <acteur>E. Baer</acteur>
+    </acteurs>
+    <anneeProduction>2005</anneeProduction>
+    <langue>en Français</langue>
+    <presse>3/5</presse>
+    <spectateur>4/5</spectateur>
+    <description>
+      <paragraphe>
+        <intrigue></intrigue>
+        <horaires>
+          <horaire id="1">
+              <jour>Mercredi | Samedi</jour>
+              <heure>14:00 |16:40 |19:40 | 22:10</heure>
+          </horaire>
+          <horaire id="2">
+              <jour>Jeudi | Vendredi | Lundi| Mardi</jour>
+              <heure>14:00 |19:40|22:10 </heure>
+          </horaire>
+          <horaire id="3">
+              <jour>Dimanche</jour>
+              <heure>10:20 | 14:00 |16:40 | 20:20</heure>
+          </horaire>
+        </horaires>
+       </paragraphe>
+    </description>
+  </film>
+
+  <film>
+    <titre>Inception</titre>
+    <duree>2h 28min</duree>
+    <genre>Science-Fiction</genre>
+    <realisateur>Christopher Nolan</realisateur>
+    <acteurs>
+      <acteur>Leonardo DiCaprio</acteur>
+      <acteur>Joseph Gordon-Levitt</acteur>
+      <acteur>Ellen Page</acteur>
+    </acteurs>
+    <anneeProduction>2010</anneeProduction>
+    <langue>en Anglais</langue>
+    <presse>4.5/5</presse>
+    <spectateur>5/5</spectateur>
+    <description>
+      <paragraphe>
+        <intrigue></intrigue>
+        <horaires>
+          <horaire id="1">
+              <jour>Vendredi | Samedi</jour>
+              <heure>14:30 | 17:00 | 19:30 | 22:00</heure>
+          </horaire>
+          <horaire id="2">
+              <jour>Dimanche</jour>
+              <heure>11:00 | 14:30 | 17:00 | 19:30</heure>
+          </horaire>
+        </horaires>
+       </paragraphe>
+    </description>
+  </film>
+
+  <film>
+    <titre>Avatar</titre>
+    <duree>2h 42min</duree>
+    <genre>Fantasy</genre>
+    <realisateur>James Cameron</realisateur>
+    <acteurs>
+      <acteur>Sam Worthington</acteur>
+      <acteur>Zoe Saldana</acteur>
+      <acteur>Sigourney Weaver</acteur>
+    </acteurs>
+    <anneeProduction>2009</anneeProduction>
+    <langue>en Anglais</langue>
+    <presse>4/5</presse>
+    <spectateur>4.5/5</spectateur>
+    <description>
+      <paragraphe>
+        <intrigue></intrigue>
+        <horaires>
+          <horaire id="1">
+              <jour>Lundi | Mercredi</jour>
+              <heure>14:00 | 17:00 | 20:00 | 23:00</heure>
+          </horaire>
+          <horaire id="2">
+              <jour>Samedi | Dimanche</jour>
+              <heure>11:00 | 14:00 | 17:00 | 20:00</heure>
+          </horaire>
+        </horaires>
+       </paragraphe>
+    </description>
+  </film>
+
+  <film>
+    <titre>The Dark Knight</titre>
+    <duree>2h 32min</duree>
+    <genre>Action</genre>
+    <realisateur>Christopher Nolan</realisateur>
+    <acteurs>
+      <acteur>Christian Bale</acteur>
+      <acteur>Heath Ledger</acteur>
+      <acteur>Aaron Eckhart</acteur>
+    </acteurs>
+    <anneeProduction>2008</anneeProduction>
+    <langue>en Anglais</langue>
+    <presse>5/5</presse>
+    <spectateur>5/5</spectateur>
+    <description>
+      <paragraphe>
+        <intrigue></intrigue>
+        <horaires>
+          <horaire id="1">
+              <jour>Mardi | Jeudi</jour>
+              <heure>15:00 | 18:00 | 21:00</heure>
+          </horaire>
+          <horaire id="2">
+              <jour>Vendredi | Samedi</jour>
+              <heure>13:00 | 16:00 | 19:00 | 22:00</heure>
+          </horaire>
+        </horaires>
+       </paragraphe>
+    </description>
+  </film>
+
+  <film>
+    <titre>Titanic</titre>
+    <duree>3h 15min</duree>
+    <genre>Romance</genre>
+    <realisateur>James Cameron</realisateur>
+    <acteurs>
+      <acteur>Leonardo DiCaprio</acteur>
+      <acteur>Kate Winslet</acteur>
+      <acteur>Billy Zane</acteur>
+    </acteurs>
+    <anneeProduction>1997</anneeProduction>
+    <langue>en Anglais</langue>
+    <presse>4.5/5</presse>
+    <spectateur>5/5</spectateur>
+    <description>
+      <paragraphe>
+        <intrigue></intrigue>
+        <horaires>
+          <horaire id="1">
+              <jour>Samedi | Dimanche</jour>
+              <heure>10:00 | 14:00 | 18:00 | 22:00</heure>
+          </horaire>
+          <horaire id="2">
+              <jour>Mercredi | Vendredi</jour>
+              <heure>12:00 | 16:00 | 20:00</heure>
+          </horaire>
+        </horaires>
+       </paragraphe>
+    </description>
+  </film>
+
+  <film>
+    <titre>La La Land</titre>
+    <duree>2h 8min</duree>
+    <genre>Comédie Musicale</genre>
+    <realisateur>Damien Chazelle</realisateur>
+    <acteurs>
+      <acteur>Ryan Gosling</acteur>
+      <acteur>Emma Stone</acteur>
+      <acteur>John Legend</acteur>
+    </acteurs>
+    <anneeProduction>2016</anneeProduction>
+    <langue>en Anglais</langue>
+    <presse>4.5/5</presse>
+    <spectateur>4.5/5</spectateur>
+    <description>
+      <paragraphe>
+        <intrigue></intrigue>
+        <horaires>
+          <horaire id="1">
+              <jour>Vendredi | Samedi</jour>
+              <heure>14:00 | 17:00 | 20:00 | 23:00</heure>
+          </horaire>
+          <horaire id="2">
+              <jour>Lundi | Mardi</jour>
+              <heure>14:00 | 17:00 | 20:00</heure>
+          </horaire>
+        </horaires>
+       </paragraphe>
+    </description>
+  </film>
+</cinema>
