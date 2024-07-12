@@ -2,4 +2,9 @@
 
 Implementation d'une solution de CRUD sur fichiers XML, basée sur les exercices 2 et 7 du TD.
 
-_Turns out you can use anything as a database..._
+### Fonctionnalités
+
+- CRUD sur les films
+- CRD sur les fiches de restaurant
+- Routage "dynamique"
+- Authentification (minimale)

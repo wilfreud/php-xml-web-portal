@@ -35,13 +35,13 @@ if (!empty($uriSegments[$controller_index])) {
 
 function handleCinemaController($controller, $action, $id)
 {
-    if ($action) {
+    if ($action || $action == 0) {
         if (is_numeric($action)) {
             $controller->edit($action);
         } elseif ($action === 'delete') {
             $controller->deleteMovie($id);
         } elseif ($action === 'edit') {
-            $controller->edit($id);
+            $controller->edit($action);
         } else {
             $controller->index();
         }

@@ -171,6 +171,7 @@ class CinemaController
 
     public function deleteMovie($id)
     {
+        // die($id);
         $movie = $this->getMovie((int)$id);
         if (!$movie) {
             $this->notFound();
@@ -180,6 +181,8 @@ class CinemaController
         // Supprimer le film
         $dom = dom_import_simplexml($movie);
         $dom->parentNode->removeChild($dom);
+
+        unset($movie);
 
         // Sauvegarder les modifications
         $this->saveMovies();
