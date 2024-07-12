@@ -1,71 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE cinema SYSTEM "dtd/cinema.dtd">
 <cinema>
-  <film>
-    <titre>Les Brigades du Tigre</titre>
-    <duree>2h 5min</duree>
-    <genre>Policier</genre>
-    <realisateur>J&#xE9;r&#xF4;me Cornuau</realisateur>
-    <acteurs>
-      <acteur>C. Cornillac</acteur>
-      <acteur>D. Kruger</acteur>
-      <acteur>E. Baer</acteur>
-    </acteurs>
-    <anneeProduction>2005</anneeProduction>
-    <langue>en Fran&#xE7;ais</langue>
-    <presse>3/5</presse>
-    <spectateur>4/5</spectateur>
-    <description>
-      <paragraphe>
-        <intrigue>Attaque Tigrine!</intrigue>
-        <horaires>
-          <horaire id="1">
-            <jour>Mercredi | Samedi</jour>
-            <heure>14:00 | 16:40 | 19:40 | 22:10</heure>
-          </horaire>
-          <horaire id="2">
-            <jour>Jeudi | Vendredi | Lundi | Mardi</jour>
-            <heure>14:00 | 19:40 | 22:10</heure>
-          </horaire>
-          <horaire id="3">
-            <jour>Dimanche</jour>
-            <heure>10:20 | 14:00 | 16:40 | 20:20</heure>
-          </horaire>
-        </horaires>
-      </paragraphe>
-    </description>
-  </film>
+  
 
-  <film>
-    <titre>Inception</titre>
-    <duree>2h 28min</duree>
-    <genre>Science-Fiction</genre>
-    <realisateur>Christopher Nolan</realisateur>
-    <acteurs>
-      <acteur>Leonardo DiCaprio</acteur>
-      <acteur>Joseph Gordon-Levitt</acteur>
-      <acteur>Ellen Page</acteur>
-    </acteurs>
-    <anneeProduction>2010</anneeProduction>
-    <langue>en Anglais</langue>
-    <presse>4.5/5</presse>
-    <spectateur>5/5</spectateur>
-    <description>
-      <paragraphe>
-        <intrigue/>
-        <horaires>
-          <horaire id="1">
-            <jour>Vendredi | Samedi</jour>
-            <heure>14:30 | 17:00 | 19:30 | 22:00</heure>
-          </horaire>
-          <horaire id="2">
-            <jour>Dimanche</jour>
-            <heure>11:00 | 14:30 | 17:00 | 19:30</heure>
-          </horaire>
-        </horaires>
-      </paragraphe>
-    </description>
-  </film>
+  
 
   <film>
     <titre>Avatar</titre>

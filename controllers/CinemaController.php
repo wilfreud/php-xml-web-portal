@@ -171,15 +171,23 @@ class CinemaController
 
     public function deleteMovie($id)
     {
-        unset($this->movies->film[$id]);
-        $res =  $this->movies->asXML("xml/cinema.xml");
-        die($res);
-        if ($res) {
-            header("Location: /tp-portail/cinema");
-        } else {
-            die("<h3 class='warning-message'>Erreur lors de la suppression du film.</h3>");
+        $movie = $this->getMovie((int)$id);
+        if (!$movie) {
+            $this->notFound();
+            return;
         }
+
+        // Supprimer le film
+        $dom = dom_import_simplexml($movie);
+        $dom->parentNode->removeChild($dom);
+
+        // Sauvegarder les modifications
+        $this->saveMovies();
+
+        header("Location: /tp-portail/cinema");
+        exit;
     }
+
 
     public function notFound()
     {
