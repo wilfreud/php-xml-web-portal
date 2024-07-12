@@ -1,25 +1,31 @@
 <?php
-require 'controllers/CinemaController.php';
+require_once 'controllers/CinemaController.php';
+require_once 'controllers/RestaurantController.php';
 
-// Determine base path dynamically
-$base_path = dirname(__FILE__); // Adjust this based on your setup if needed
+$base_path = dirname(__FILE__);
 
-// Remove base path from URI to get the remaining path
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = trim($uri, '/');
-$uri = str_replace($base_path, '', $uri); // Remove base path
+$uri = str_replace($base_path, '', $uri);
 
 $uriSegments = explode('/', $uri);
 
-$controller = new CinemaController();
+$cinemaController = new CinemaController();
+$restaurantController = new RestaurantController();
 
 $controller_index = 1;
 if (isset($uriSegments[$controller_index]) && $uriSegments[$controller_index] == 'cinema') {
     if (isset($uriSegments[$controller_index + 1])) {
-        $controller->edit($uriSegments[$controller_index + 1]);
+        $cinemaController->edit($uriSegments[$controller_index + 1]);
     } else {
-        $controller->index();
+        $cinemaController->index();
+    }
+} else if (isset($uriSegments[$controller_index]) && $uriSegments[$controller_index] == 'restaurant') {
+    if (isset($uriSegments[$controller_index + 1])) {
+        $restaurantController->editMenu($uriSegments[$controller_index + 1]);
+    } else {
+        $restaurantController->index();
     }
 } else {
-    echo "404 Not Found";
+    require_once "views/404.php";
 }

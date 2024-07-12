@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fiche SYSTEM "dtd/fiche.dtd">
+
 <fiche>
   <coordonne>
     <nom>Restaurant Le Gourmet</nom>
@@ -16,50 +18,78 @@
   <carte>
     <plat>
       <indication>entrée</indication>
-      <prixP>12.50</prixP>
+      <prix>12.50</prix>
       <descriptionP>
         <paragraphe>Salade de chèvre chaud sur lit de roquette.</paragraphe>
       </descriptionP>
     </plat>
     <plat>
       <indication>plat</indication>
-      <prixP>25.00</prixP>
+      <prix>25.00</prix>
       <descriptionP>
         <paragraphe>Filet de boeuf avec sauce au poivre.</paragraphe>
       </descriptionP>
     </plat>
     <plat>
       <indication>dessert</indication>
-      <prixP>8.00</prixP>
+      <prix>8.00</prix>
       <descriptionP>
         <paragraphe>Tarte Tatin avec crème fraîche.</paragraphe>
       </descriptionP>
     </plat>
   </carte>
   <menus>
-    <titre>Menu Déjeuner</titre>
-    <descriptionM>Un menu complet pour le déjeuner.</descriptionM>
-    <prixM>35.00</prixM>
-    <plat>
-      <indication>entrée</indication>
-      <prixP>10.00</prixP>
-      <descriptionP>
-        <paragraphe>Soupe à l'oignon gratinée.</paragraphe>
-      </descriptionP>
-    </plat>
-    <plat>
-      <indication>plat</indication>
-      <prixP>20.00</prixP>
-      <descriptionP>
-        <paragraphe>Saumon grillé avec légumes de saison.</paragraphe>
-      </descriptionP>
-    </plat>
-    <plat>
-      <indication>dessert</indication>
-      <prixP>5.00</prixP>
-      <descriptionP>
-        <paragraphe>Mousse au chocolat.</paragraphe>
-      </descriptionP>
-    </plat>
+    <menu>
+      <titre>Menu Déjeuner</titre>
+      <descriptionM>Un menu complet pour le déjeuner.</descriptionM>
+      <prixM>35.00</prixM>
+      <plat>
+        <indication>entrée</indication>
+        <prix>10.00</prix>
+        <descriptionP>
+          <paragraphe>Soupe à l'oignon gratinée.</paragraphe>
+        </descriptionP>
+      </plat>
+      <plat>
+        <indication>plat</indication>
+        <prix>20.00</prix>
+        <descriptionP>
+          <paragraphe>Saumon grillé avec légumes de saison.</paragraphe>
+        </descriptionP>
+      </plat>
+      <plat>
+        <indication>dessert</indication>
+        <prix>5.00</prix>
+        <descriptionP>
+          <paragraphe>Mousse au chocolat.</paragraphe>
+        </descriptionP>
+      </plat>
+    </menu>
+    <menu>
+      <titre>Menu Dîner</titre>
+      <descriptionM>Un menu complet pour le dîner.</descriptionM>
+      <prixM>45.00</prixM>
+      <plat>
+        <indication>entrée</indication>
+        <prix>15.00</prix>
+        <descriptionP>
+          <paragraphe>Foie gras de canard avec chutney de figues.</paragraphe>
+        </descriptionP>
+      </plat>
+      <plat>
+        <indication>plat</indication>
+        <prix>25.00</prix>
+        <descriptionP>
+          <paragraphe>Magret de canard avec purée de pommes de terre.</paragraphe>
+        </descriptionP>
+      </plat>
+      <plat>
+        <indication>dessert</indication>
+        <prix>10.00</prix>
+        <descriptionP>
+          <paragraphe>Crème brûlée à la vanille.</paragraphe>
+        </descriptionP>
+      </plat>
+    </menu>
   </menus>
 </fiche>

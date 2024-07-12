@@ -6,8 +6,12 @@ class CinemaController
 
     public function __construct()
     {
-        $file = simplexml_load_file("xml/cinema.xml");
-        $this->movies = new SimpleXMLElement($file->asXML());
+        $filename = "xml/cinema.xml";
+        if (!file_exists($filename)) {
+            die("<h3 class='warning-message'>Le fichier cinema.xml n'existe pas...</h3>");
+        }
+
+        $this->movies = simplexml_load_file($filename);
         if ($this->movies === false) {
             die("<h3 class='warning-message'>Erreur lors du chargement des films...</h3>");
         }

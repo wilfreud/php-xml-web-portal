@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
-<!DOCTYPE cinema SYSTEM "dtd/
-cinema.dtd">
+<!DOCTYPE cinema SYSTEM "dtd/cinema.dtd">
 <cinema>
   <film>
     <titre>Les Brigades du Tigre</titre>
