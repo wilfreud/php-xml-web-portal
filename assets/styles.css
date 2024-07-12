@@ -5,3 +5,7 @@
 .warning-message {
   color: orange;
 }
+
+.italic {
+  font-style: italic;
+}

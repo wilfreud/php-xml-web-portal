@@ -40,6 +40,7 @@ class RestaurantController
 
     public function addRestaurant($data)
     {
+        // die("add resto: " . print_r($data, true));
         $this->validateRestaurantData($data);
 
         // Création d'une nouvelle fiche de restaurant dans le XML
@@ -59,6 +60,7 @@ class RestaurantController
         }
 
         $this->populateRestaurantData($restaurantToEdit, $data);
+        die($restaurantToEdit->asXML());
         $this->saveRestaurants();
     }
 
@@ -74,38 +76,51 @@ class RestaurantController
 
     private function populateRestaurantData($restaurant, $data)
     {
-        $restaurant->addChild("nom", htmlspecialchars($data['nom']));
-        $restaurant->addChild("adresse", htmlspecialchars($data['adresse']));
-        $restaurant->addChild("restaurateur", htmlspecialchars($data['restaurateur']));
+        // Ajouter les coordonnées
+        $coordonnees = $restaurant->addChild("coordonnees");
+        $coordonnees->addChild("nom", htmlspecialchars($data['nom']));
+        $coordonnees->addChild("adresse", htmlspecialchars($data['adresse']));
+        $coordonnees->addChild("restaurateur", htmlspecialchars($data['restaurateur']));
 
-        // Description du restaurant
+        // Description du restaurant (optionnel)
         if (!empty($data['description_restaurant'])) {
             $description = $restaurant->addChild("description_restaurant");
-            $description->addChild("paragraphe", htmlspecialchars($data['description_restaurant']));
+            foreach ($data['description_restaurant'] as $paragraph) {
+                $description->addChild("paragraphe", htmlspecialchars($paragraph));
+            }
         }
 
-        // Carte des plats
+        // Ajouter la carte (optionnelle)
         if (!empty($data['carte'])) {
             $carte = $restaurant->addChild("carte");
             foreach ($data['carte'] as $plat) {
                 $platElement = $carte->addChild("plat");
                 $platElement->addChild("nom", htmlspecialchars($plat['nom']));
-                $platElement->addChild("description_plat", htmlspecialchars($plat['description']));
+                if (!empty($plat['description'])) {
+                    $platElement->addChild("description_plat", htmlspecialchars($plat['description']));
+                }
                 $platElement->addChild("prix", htmlspecialchars($plat['prix']));
             }
         }
 
-        // Menus
+        // Ajouter les menus (optionnels)
         if (!empty($data['menus'])) {
             $menus = $restaurant->addChild("menus");
             foreach ($data['menus'] as $menu) {
                 $menuElement = $menus->addChild("menu");
                 $menuElement->addChild("titre", htmlspecialchars($menu['titre']));
-                $menuElement->addChild("description_menu", htmlspecialchars($menu['description']));
+                if (!empty($menu['description'])) {
+                    $menuElement->addChild("description_menu", htmlspecialchars($menu['description']));
+                }
                 $menuElement->addChild("prix", htmlspecialchars($menu['prix']));
+                $platsElement = $menuElement->addChild("plats");
+                foreach ($menu['plats'] as $platRef) {
+                    $platsElement->addChild("plat_ref", "", ['ref' => $platRef]);
+                }
             }
         }
     }
+
 
     private function saveRestaurants()
     {
@@ -135,7 +150,9 @@ class RestaurantController
     public function edit($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->updateRestaurant((int)$id, $_POST);
+            if ($id === "edit") $this->addRestaurant($_POST);
+            else
+                $this->updateRestaurant((int)$id, $_POST);
             header("Location: /tp-portail/restaurant");
             return;
         }
