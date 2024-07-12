@@ -1,18 +1,18 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <!DOCTYPE cinema SYSTEM "dtd/cinema.dtd">
 <cinema>
   <film>
     <titre>Les Brigades du Tigre</titre>
     <duree>2h 5min</duree>
     <genre>Policier</genre>
-    <realisateur>Jérôme Cornuau</realisateur>
+    <realisateur>J&#xE9;r&#xF4;me Cornuau</realisateur>
     <acteurs>
       <acteur>C. Cornillac</acteur>
       <acteur>D. Kruger</acteur>
       <acteur>E. Baer</acteur>
     </acteurs>
     <anneeProduction>2005</anneeProduction>
-    <langue>en Français</langue>
+    <langue>en Fran&#xE7;ais</langue>
     <presse>3/5</presse>
     <spectateur>4/5</spectateur>
     <description>
@@ -20,19 +20,19 @@
         <intrigue>Attaque Tigrine!</intrigue>
         <horaires>
           <horaire id="1">
-              <jour>Mercredi | Samedi</jour>
-              <heure>14:00 |16:40 |19:40 | 22:10</heure>
+            <jour>Mercredi | Samedi</jour>
+            <heure>14:00 | 16:40 | 19:40 | 22:10</heure>
           </horaire>
           <horaire id="2">
-              <jour>Jeudi | Vendredi | Lundi| Mardi</jour>
-              <heure>14:00 |19:40|22:10 </heure>
+            <jour>Jeudi | Vendredi | Lundi | Mardi</jour>
+            <heure>14:00 | 19:40 | 22:10</heure>
           </horaire>
           <horaire id="3">
-              <jour>Dimanche</jour>
-              <heure>10:20 | 14:00 |16:40 | 20:20</heure>
+            <jour>Dimanche</jour>
+            <heure>10:20 | 14:00 | 16:40 | 20:20</heure>
           </horaire>
         </horaires>
-       </paragraphe>
+      </paragraphe>
     </description>
   </film>
 
@@ -52,18 +52,18 @@
     <spectateur>5/5</spectateur>
     <description>
       <paragraphe>
-        <intrigue></intrigue>
+        <intrigue/>
         <horaires>
           <horaire id="1">
-              <jour>Vendredi | Samedi</jour>
-              <heure>14:30 | 17:00 | 19:30 | 22:00</heure>
+            <jour>Vendredi | Samedi</jour>
+            <heure>14:30 | 17:00 | 19:30 | 22:00</heure>
           </horaire>
           <horaire id="2">
-              <jour>Dimanche</jour>
-              <heure>11:00 | 14:30 | 17:00 | 19:30</heure>
+            <jour>Dimanche</jour>
+            <heure>11:00 | 14:30 | 17:00 | 19:30</heure>
           </horaire>
         </horaires>
-       </paragraphe>
+      </paragraphe>
     </description>
   </film>
 
@@ -83,18 +83,18 @@
     <spectateur>4.5/5</spectateur>
     <description>
       <paragraphe>
-        <intrigue></intrigue>
+        <intrigue/>
         <horaires>
           <horaire id="1">
-              <jour>Lundi | Mercredi</jour>
-              <heure>14:00 | 17:00 | 20:00 | 23:00</heure>
+            <jour>Lundi | Mercredi</jour>
+            <heure>14:00 | 17:00 | 20:00 | 23:00</heure>
           </horaire>
           <horaire id="2">
-              <jour>Samedi | Dimanche</jour>
-              <heure>11:00 | 14:00 | 17:00 | 20:00</heure>
+            <jour>Samedi | Dimanche</jour>
+            <heure>11:00 | 14:00 | 17:00 | 20:00</heure>
           </horaire>
         </horaires>
-       </paragraphe>
+      </paragraphe>
     </description>
   </film>
 
@@ -114,18 +114,18 @@
     <spectateur>5/5</spectateur>
     <description>
       <paragraphe>
-        <intrigue></intrigue>
+        <intrigue/>
         <horaires>
           <horaire id="1">
-              <jour>Mardi | Jeudi</jour>
-              <heure>15:00 | 18:00 | 21:00</heure>
+            <jour>Mardi | Jeudi</jour>
+            <heure>15:00 | 18:00 | 21:00</heure>
           </horaire>
           <horaire id="2">
-              <jour>Vendredi | Samedi</jour>
-              <heure>13:00 | 16:00 | 19:00 | 22:00</heure>
+            <jour>Vendredi | Samedi</jour>
+            <heure>13:00 | 16:00 | 19:00 | 22:00</heure>
           </horaire>
         </horaires>
-       </paragraphe>
+      </paragraphe>
     </description>
   </film>
 
@@ -145,25 +145,25 @@
     <spectateur>5/5</spectateur>
     <description>
       <paragraphe>
-        <intrigue></intrigue>
+        <intrigue/>
         <horaires>
           <horaire id="1">
-              <jour>Samedi | Dimanche</jour>
-              <heure>10:00 | 14:00 | 18:00 | 22:00</heure>
+            <jour>Samedi | Dimanche</jour>
+            <heure>10:00 | 14:00 | 18:00 | 22:00</heure>
           </horaire>
           <horaire id="2">
-              <jour>Mercredi | Vendredi</jour>
-              <heure>12:00 | 16:00 | 20:00</heure>
+            <jour>Mercredi | Vendredi</jour>
+            <heure>12:00 | 16:00 | 20:00</heure>
           </horaire>
         </horaires>
-       </paragraphe>
+      </paragraphe>
     </description>
   </film>
 
   <film>
     <titre>La La Land</titre>
     <duree>2h 8min</duree>
-    <genre>Comédie Musicale</genre>
+    <genre>Com&#xE9;die Musicale</genre>
     <realisateur>Damien Chazelle</realisateur>
     <acteurs>
       <acteur>Ryan Gosling</acteur>
@@ -179,15 +179,47 @@
         <intrigue>Nein! English!</intrigue>
         <horaires>
           <horaire id="1">
-              <jour>Vendredi | Samedi</jour>
-              <heure>14:00 | 17:00 | 20:00 | 23:00</heure>
+            <jour>Vendredi | Samedi</jour>
+            <heure>14:00 | 17:00 | 20:00 | 23:00</heure>
           </horaire>
           <horaire id="2">
-              <jour>Lundi | Mardi</jour>
-              <heure>14:00 | 17:00 | 20:00</heure>
+            <jour>Lundi | Mardi</jour>
+            <heure>14:00 | 17:00 | 20:00</heure>
           </horaire>
         </horaires>
-       </paragraphe>
+      </paragraphe>
     </description>
   </film>
-</cinema>
+  <film>
+    <titre>Interstellar</titre>
+    <duree>2h 49mn</duree>
+    <genre>Sci-FI</genre>
+    <realisateur>Christopher Nollan</realisateur>
+    <acteurs>
+      <acteur>Mathew McConaughey</acteur>
+      <acteur>Anne Hathaway</acteur>
+      <acteur>Jessica Chastain</acteur>
+    </acteurs>
+    <anneeProduction>2014</anneeProduction>
+    <langue>Anglais</langue>
+    <presse>4.6/5</presse>
+    <spectateur>4.8/5</spectateur>
+    <description>
+      <paragraphe>
+        <intrigue>Un groupe d'explorateurs utilise un trou de ver r&#xE9;cemment d&#xE9;couvert pour
+          surpasser les limites du voyage spatial humain et conqu&#xE9;rir les vastes distances
+          impliqu&#xE9;es dans un voyage interstellaire.</intrigue>
+        <horaires>
+          <horaire id="66916c7cf1c99">
+            <jour>Lundi|Mercredi|Vendredi</jour>
+            <heure>13:00|16:30|20:00</heure>
+          </horaire>
+          <horaire id="66916c7cf1ca5">
+            <jour>Samedi|Dimanche</jour>
+            <heure>10:00|14:00|18:00</heure>
+          </horaire>
+        </horaires>
+      </paragraphe>
+    </description>
+  </film>
+<film><titre>Interstellar 2</titre><duree>2h 491mn</duree><genre>Sci-FI1</genre><realisateur>Christopher Nollanaa</realisateur><acteurs><acteur>Marie Curie</acteur><acteur>Pierre Niney</acteur><acteur>Qilbot</acteur></acteurs><anneeProduction>2054</anneeProduction><langue>Deutch</langue><presse>4.6/5</presse><spectateur>4.8/5</spectateur><description><paragraphe><intrigue>Lorep ipsum dolor sit amet</intrigue><horaires><horaire id="66916df97b038"><jour>Mardi | Jeudi</jour><heure>10:23</heure></horaire><horaire id="66916df97b043"><jour>Mercredi | Samedi</jour><heure>10:14</heure></horaire></horaires></paragraphe></description></film></cinema>

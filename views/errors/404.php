@@ -37,7 +37,7 @@
     <div class="container">
         <div class="content">
             <div class="title">404 Not Found</div>
-            <div class="message">TService introuvable.</div>
+            <div class="message">Service introuvable.</div>
         </div>
     </div>
 </body>

@@ -52,13 +52,20 @@
             echo "<p class='bold italic'> Horaires </p>";
             echo "<ul>";
             foreach ($movie->description->paragraphe->horaires->horaire as $horaire) {
-                echo "<li>" . $horaire->jour . " --- á --- " . $horaire->heure . "</li>";
+                echo "<li>" . $horaire->jour . ": " . $horaire->heure . "</li>";
             }
             echo "</ul>";
 
+            echo "<div>";
             echo "<form method='get' action='/tp-portail/cinema/$count'>" .
                 "<button type='submit'>Editer</button>
                 </form>";
+
+            echo "<form method='post' action='/tp-portail/cinema/delete/$count'>" .
+                "<button type='submit'>Supprimer</button>
+                </form>";
+            echo "</div>";
+
             echo "</div>";
             $count++;
         }

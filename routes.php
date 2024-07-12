@@ -5,36 +5,67 @@ require_once 'controllers/RestaurantController.php';
 $base_path = dirname($_SERVER['SCRIPT_NAME']);
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$uri = trim($uri, '/');
-$uri = str_replace(trim($base_path, '/'), '', $uri);
-$uri = trim($uri, '/');
-
+$uri = trim(str_replace(trim($base_path, '/'), '', $uri), '/');
 $uriSegments = explode('/', $uri);
 
 $cinemaController = new CinemaController();
 $restaurantController = new RestaurantController();
 
-$controller_index = 0; // Adjusted to start from 0 for simplicity
-if (isset($uriSegments[$controller_index])) {
-    switch ($uriSegments[$controller_index]) {
+$controller_index = 0;
+
+if (!empty($uriSegments[$controller_index])) {
+    $controller = $uriSegments[$controller_index];
+    $action = $uriSegments[$controller_index + 1] ?? null;
+
+    switch ($controller) {
         case 'cinema':
-            if (isset($uriSegments[$controller_index + 1])) {
-                $cinemaController->edit($uriSegments[$controller_index + 1]);
-            } else {
-                $cinemaController->index(null);
-            }
+            handleCinemaController($cinemaController, $action);
             break;
         case 'restaurant':
-            if (isset($uriSegments[$controller_index + 1])) {
-                $restaurantController->editMenu($uriSegments[$controller_index + 1]);
-            } else {
-                $restaurantController->index();
-            }
+            handleRestaurantController($restaurantController, $action);
             break;
         default:
-            require_once "views/404.php";
+            render404();
             break;
     }
 } else {
-    require_once "views/404.php";
+    render404();
+}
+
+function handleCinemaController($controller, $action)
+{
+    if ($action || $action == 0) {
+        if (is_numeric($action)) {
+            $controller->edit($action);
+        } elseif ($action === 'delete') {
+            $controller->deleteMovie($action);
+        } elseif ($action === 'edit') {
+            $controller->edit($action);
+        } else {
+            $controller->index();
+        }
+    } else {
+        $controller->index();
+    }
+}
+
+
+function handleRestaurantController($controller, $action)
+{
+    if ($action) {
+        if (is_numeric($action)) {
+            $controller->editMenu($action);
+        } elseif ($action === 'edit') {
+            $controller->editMenu(null);
+        } else {
+            render404();
+        }
+    } else {
+        $controller->index();
+    }
+}
+
+function render404()
+{
+    require_once "views/errors/404.php";
 }
