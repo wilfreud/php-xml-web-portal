@@ -25,9 +25,13 @@
 
 <body>
     <h1>Films</h1>
+    <form method="get" action="/tp-portail/cinema/edit">
+        <button type="submit">Ajouter</button>
+    </form>
     <hr />
     <div>
         <?php
+        $count = 0;
         foreach ($movies as $movie) {
             echo "<div> <span class='bold'>Titre: </span>" . $movie->titre . "</div>";
             echo "<div> <span class='bold'>Realisateur: </span>" . $movie->realisateur . "</div>";
@@ -51,7 +55,12 @@
                 echo "<li>" . $horaire->jour . " --- á --- " . $horaire->heure . "</li>";
             }
             echo "</ul>";
+
+            echo "<form method='get' action='/tp-portail/cinema/$count'>" .
+                "<button type='submit'>Editer</button>
+                </form>";
             echo "</div>";
+            $count++;
         }
         ?>
     </div>

@@ -58,6 +58,11 @@ class CinemaController
 
     public function edit($id)
     {
+        if ($id === "edit") {
+            ViewRenderer::render('cinema/edit');
+            return;
+        }
+
         if (is_numeric($id) === false) {
             $this->notFound();
             return;
@@ -69,7 +74,7 @@ class CinemaController
             $this->notFound();
             return;
         }
-        ViewRenderer::render('cinema/edit', ['cinema' => $this->getMovie($id)]);
+        ViewRenderer::render('cinema/edit', ['film' => $movie]);
     }
 
     public function notFound()
