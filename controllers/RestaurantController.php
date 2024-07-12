@@ -35,7 +35,7 @@ class RestaurantController
             $this->notFound();
             return;
         }
-        ViewRenderer::render('restaurant/details', ['restaurant' => $restaurant]);
+        ViewRenderer::render('restaurant/details', ['restaurant' => $restaurant, 'id' => $id]);
     }
 
     public function addRestaurant($data)

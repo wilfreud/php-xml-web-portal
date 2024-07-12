@@ -63,8 +63,8 @@ function handleRestaurantController($controller, $action, $id)
             } else {
                 render404();
             }
-        } elseif ($action === 'edit' && $id === 'new') {
-            $controller->edit(null); // For creating a new restaurant
+        } elseif ($action === 'edit') {
+            $controller->edit($action); // For creating a new restaurant
         } else {
             render404();
         }

@@ -1,4 +1,4 @@
-<!ELEMENT restaurants (restaurant+)>
+<!ELEMENT restaurants (restaurant*)>
 
 <!ELEMENT restaurant (coordonnees, description_restaurant?, carte?, menus?)>
 <!ELEMENT coordonnees (nom, adresse, restaurateur)>

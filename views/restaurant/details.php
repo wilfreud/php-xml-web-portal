@@ -36,6 +36,14 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </ul>
+
+    <div>
+        <a href="/tp-portail/restaurant/edit/<?php echo $id; ?>">Modifier</a>
+        <form method="POST" action="/tp-portail/restaurant/delete/<?php echo $id; ?>" style="display:inline;">
+            <button type="submit">Supprimer</button>
+        </form>
+    </div>
+
     <a href="/tp-portail/restaurant">Retour à la liste des restaurants</a>
 </body>
 

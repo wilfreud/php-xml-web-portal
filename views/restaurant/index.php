@@ -27,7 +27,7 @@
             <?php $count++; ?>
         <?php endforeach; ?>
     </ul>
-    <a href="/tp-portail/restaurant/edit/new">Ajouter un Restaurant</a>
+    <a href="/tp-portail/restaurant/edit">Ajouter un Restaurant</a>
 </body>
 
 </html>
