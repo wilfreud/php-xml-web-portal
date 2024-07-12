@@ -1,3 +1,6 @@
+<?php
+// session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,11 +41,14 @@
     </ul>
 
     <div>
-        <a href="/tp-portail/restaurant/edit/<?php echo $id; ?>">Modifier</a>
-        <form method="POST" action="/tp-portail/restaurant/delete/<?php echo $id; ?>" style="display:inline;">
-            <button type="submit">Supprimer</button>
-        </form>
+        <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) : ?>
+            <a href="/tp-portail/restaurant/edit/<?php echo $id; ?>">Modifier</a>
+            <form method="POST" action="/tp-portail/restaurant/delete/<?php echo $id; ?>" style="display:inline;">
+                <button type="submit">Supprimer</button>
+            </form>
+        <?php endif; ?>
     </div>
+
 
     <a href="/tp-portail/restaurant">Retour à la liste des restaurants</a>
 </body>

@@ -15,6 +15,12 @@
     </style>
 </head>
 
+<?php
+if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+    ViewRenderer::render('errors/401');
+}
+?>
+
 <body>
     <h2><?php echo isset($film) ? "Modifier" : "Ajouter"; ?> un Film</h2>
     <form method="post">

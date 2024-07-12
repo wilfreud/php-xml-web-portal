@@ -1,6 +1,5 @@
 <?php
 require_once 'ViewRenderer.php';
-
 class CinemaController
 {
     private $movies;
@@ -171,6 +170,11 @@ class CinemaController
 
     public function deleteMovie($id)
     {
+
+        if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+            ViewRenderer::render('errors/401');
+        }
+
         // die($id);
         $movie = $this->getMovie((int)$id);
         if (!$movie) {

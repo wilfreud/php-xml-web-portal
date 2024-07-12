@@ -1,3 +1,6 @@
+<?php
+// session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,10 +64,14 @@
                 "<button type='submit'>Editer</button>
                 </form>";
 
-            echo "<form method='post' action='/tp-portail/cinema/delete/$count'>" .
-                "<button type='submit'>Supprimer</button>
-                </form>";
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+                echo "<form method='post' action='/tp-portail/cinema/delete/$count'>" .
+                    "<button type='submit'>Supprimer</button>
+                         </form>";
+            }
+
             echo "</div>";
+
 
             echo "</div>";
             $count++;

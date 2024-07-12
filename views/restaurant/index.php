@@ -1,3 +1,5 @@
+<?php
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,9 +22,12 @@
                 <a href="/tp-portail/restaurant/details/<?php echo $count; ?>">
                     <?php echo htmlspecialchars($restaurant->coordonnees->nom); ?>
                 </a>
-                <form method="POST" action="/tp-portail/restaurant/delete/<?php echo $count; ?>" style="display:inline;">
-                    <button type="submit">Supprimer</button>
-                </form>
+                <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) : ?>
+                    <form method="POST" action="/tp-portail/restaurant/delete/<?php echo $count; ?>" style="display:inline;">
+                        <button type="submit">Supprimer</button>
+                    </form>
+                <?php endif; ?>
+
             </li>
             <?php $count++; ?>
         <?php endforeach; ?>

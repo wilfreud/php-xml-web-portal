@@ -1,6 +1,8 @@
 <?php
 require_once 'controllers/CinemaController.php';
 require_once 'controllers/RestaurantController.php';
+require_once 'controllers/AuthController.php';
+session_start();
 
 $base_path = dirname($_SERVER['SCRIPT_NAME']);
 
@@ -10,6 +12,8 @@ $uriSegments = explode('/', $uri);
 
 $cinemaController = new CinemaController();
 $restaurantController = new RestaurantController();
+$authController = new AuthController();
+
 
 $controller_index = 0;
 
@@ -24,6 +28,12 @@ if (!empty($uriSegments[$controller_index])) {
             break;
         case 'restaurant':
             handleRestaurantController($restaurantController, $action, $id);
+            break;
+        case 'login':
+            $authController->login();
+            break;
+        case 'logout':
+            $authController->logout();
             break;
         default:
             render404();

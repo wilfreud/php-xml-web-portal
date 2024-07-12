@@ -1,20 +1,21 @@
 <?
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     $username = $_POST['username'];
+//     $password = $_POST['password'];
 
-    // Exemple simple, à remplacer par une méthode plus sécurisée
-    if ($username === 'admin' && $password === 'admin') {
-        $_SESSION['logged_in'] = true;
-        header('Location: /tp-portail');
-        exit;
-    } else {
-        echo "Identifiants incorrects.";
-    }
-}
+//     // Exemple simple, à remplacer par une méthode plus sécurisée
+//     if ($username === 'admin' && $password === 'admin') {
+//         $_SESSION['logged_in'] = true;
+//         header('Location: /tp-portail');
+//         exit;
+//     } else {
+//         echo "Identifiants incorrects.";
+//     }
+// }
 
+// 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <h1>Connexion</h1>
-    <form method="POST" action="login.php">
+    <form method="POST">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br><br>
