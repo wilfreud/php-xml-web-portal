@@ -1,24 +1,36 @@
-<!ELEMENT fiche (coordonne, carte, menus?)>
-<!ELEMENT coordonne (nom, adresse, nomRestaurateur, descriptionCoordonne?)>
+<!ELEMENT fiche (coordonnees, description_restaurant?, carte?, menus?)>
+<!ELEMENT coordonnees (nom, adresse, restaurateur)>
 <!ELEMENT nom (#PCDATA)>
 <!ELEMENT adresse (#PCDATA)>
-<!ELEMENT nomRestaurateur (#PCDATA)>
-<!ELEMENT descriptionCoordonne (listes | paragraphes | #PCDATA)+>
-<!ELEMENT listes (#PCDATA)>
-<!ELEMENT paragraphes (#PCDATA, image+)>
+<!ELEMENT restaurateur (#PCDATA)>
+
+<!ELEMENT description_restaurant (#PCDATA|important|liste|paragraphe|image)*>
+<!ELEMENT important (#PCDATA)>
+<!ELEMENT liste (item+)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT paragraphe (#PCDATA|important|image)*>
 <!ELEMENT image EMPTY>
-<!ATTLIST image url CDATA #REQUIRED
-                     position (gauche | droite | centre) #REQUIRED>
+<!ATTLIST image
+  url CDATA #REQUIRED
+  position (gauche|droite|centre) #REQUIRED>
+
 <!ELEMENT carte (plat+)>
-<!ELEMENT plat (indication, prix, descriptionP?)>
-<!ELEMENT indication (#PCDATA)>
+<!ELEMENT plat (nom, description_plat?, prix)>
+<!ATTLIST plat
+  id ID #REQUIRED
+  type (entree|plat|dessert|fromage) #REQUIRED>
 <!ELEMENT prix (#PCDATA)>
-<!ELEMENT descriptionP (paragraphe)>
-<!ELEMENT paragraphe (#PCDATA)>
-<!ELEMENT menus (menu+)>
-<!ELEMENT menu (titre, descriptionM, prixM, plat+)>
+<!ATTLIST prix
+  devise CDATA #REQUIRED>
+<!ELEMENT description_plat (#PCDATA|important)*>
+
+<!ELEMENT menus (menu*)>
+<!ATTLIST menus
+  ordre (prix|apparition) "apparition">
+<!ELEMENT menu (titre, description_menu, prix, plats)>
 <!ELEMENT titre (#PCDATA)>
-<!ELEMENT descriptionM (#PCDATA)>
-<!ELEMENT prixM (#PCDATA)>
-<!ELEMENT indication (#PCDATA)>
-<!ELEMENT descriptionP (paragraphe)>
+<!ELEMENT description_menu (#PCDATA|important)*>
+<!ELEMENT plats (plat_ref+)>
+<!ELEMENT plat_ref EMPTY>
+<!ATTLIST plat_ref
+  ref IDREF #REQUIRED>
