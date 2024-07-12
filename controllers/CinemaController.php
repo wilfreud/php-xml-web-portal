@@ -30,40 +30,66 @@ class CinemaController
 
     public function addMovie($data)
     {
-        // Validation des données obligatoires
+        $this->validateMovieData($data);
+
+        // Création d'un nouveau film dans le XML
+        $newMovie = $this->movies->addChild("film");
+        print_r($newMovie);
+        $this->populateMovieData($newMovie, $data);
+
+        $this->saveMovies();
+    }
+
+    public function updateMovie($id, $data)
+    {
+        $this->validateMovieData($data);
+        $movieToEdit = $this->getMovie($id);
+
+        if (!$movieToEdit) {
+            die("<h3 class='warning-message'>Erreur : Film non trouvé.</h3>");
+        }
+
+        $this->populateMovieData($movieToEdit, $data);
+        $this->saveMovies();
+    }
+
+    private function validateMovieData($data)
+    {
         $requiredFields = ['titre', 'realisateur', 'anneeProduction', 'genre', 'duree', 'langue', 'acteurs', 'intrigue', 'horaires'];
         foreach ($requiredFields as $field) {
             if (empty($data[$field])) {
                 die("<h3 class='warning-message'>Erreur : Le champ $field est obligatoire.</h3>");
             }
         }
+    }
 
-        // Création d'un nouveau film dans le XML
-        $newMovie = $this->movies->addChild("film");
-        $newMovie->addChild("titre", htmlspecialchars($data['titre']));
-        $newMovie->addChild("duree", htmlspecialchars($data['duree']));
-        $newMovie->addChild("genre", htmlspecialchars($data['genre']));
-        $newMovie->addChild("realisateur", htmlspecialchars($data['realisateur']));
+    private function populateMovieData($movie, $data)
+    {
+        $movie = $this->movies->addChild("film");
+        $movie->addChild("titre", htmlspecialchars($data['titre']));
+        $movie->addChild("duree", htmlspecialchars($data['duree']));
+        $movie->addChild("genre", htmlspecialchars($data['genre']));
+        $movie->addChild("realisateur", htmlspecialchars($data['realisateur']));
 
         // Ajout des acteurs
-        $acteurs = $newMovie->addChild("acteurs");
+        $acteurs = $movie->addChild("acteurs");
         foreach (explode(",", $data['acteurs']) as $acteur) {
             $acteurs->addChild("acteur", htmlspecialchars(trim($acteur)));
         }
 
-        $newMovie->addChild("anneeProduction", htmlspecialchars($data['anneeProduction']));
-        $newMovie->addChild("langue", htmlspecialchars($data['langue']));
+        $movie->addChild("anneeProduction", htmlspecialchars($data['anneeProduction']));
+        $movie->addChild("langue", htmlspecialchars($data['langue']));
 
         // Ajout des éléments facultatifs
         if (!empty($data['presse'])) {
-            $newMovie->addChild("presse", htmlspecialchars($data['presse']));
+            $movie->addChild("presse", htmlspecialchars($data['presse']));
         }
         if (!empty($data['spectateur'])) {
-            $newMovie->addChild("spectateur", htmlspecialchars($data['spectateur']));
+            $movie->addChild("spectateur", htmlspecialchars($data['spectateur']));
         }
 
         // Ajout de la description
-        $description = $newMovie->addChild("description");
+        $description = $movie->addChild("description");
         $paragraphe = $description->addChild("paragraphe");
         $paragraphe->addChild("intrigue", htmlspecialchars($data['intrigue']));
 
@@ -87,7 +113,11 @@ class CinemaController
             $horaireElement->addChild("jour", htmlspecialchars($jours));
             $horaireElement->addChild("heure", htmlspecialchars($heures));
         }
+    }
 
+
+    private function saveMovies()
+    {
         // Validation et sauvegarde du XML
         $xml = new DOMDocument();
         $xml->loadXML($this->movies->asXML());
@@ -106,8 +136,6 @@ class CinemaController
         }
     }
 
-
-
     public function index()
     {
         ViewRenderer::render('cinema/index', ['movies' => $this->listMovies()]);
@@ -116,7 +144,7 @@ class CinemaController
     public function edit($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->addMovie($_POST);
+            $this->updateMovie((int)$id, $_POST);
             header("Location: /tp-portail/cinema");
             exit;
         }
@@ -144,9 +172,14 @@ class CinemaController
     public function deleteMovie($id)
     {
         unset($this->movies->film[$id]);
-        $this->movies->asXML("xml/cinema.xml");
+        $res =  $this->movies->asXML("xml/cinema.xml");
+        die($res);
+        if ($res) {
+            header("Location: /tp-portail/cinema");
+        } else {
+            die("<h3 class='warning-message'>Erreur lors de la suppression du film.</h3>");
+        }
     }
-
 
     public function notFound()
     {
