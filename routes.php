@@ -16,13 +16,14 @@ $controller_index = 0;
 if (!empty($uriSegments[$controller_index])) {
     $controller = $uriSegments[$controller_index];
     $action = $uriSegments[$controller_index + 1] ?? null;
+    $id = $uriSegments[$controller_index + 2] ?? null;
 
     switch ($controller) {
         case 'cinema':
-            handleCinemaController($cinemaController, $action);
+            handleCinemaController($cinemaController, $action, $id);
             break;
         case 'restaurant':
-            handleRestaurantController($restaurantController, $action);
+            handleRestaurantController($restaurantController, $action, $id);
             break;
         default:
             render404();
@@ -32,15 +33,15 @@ if (!empty($uriSegments[$controller_index])) {
     render404();
 }
 
-function handleCinemaController($controller, $action)
+function handleCinemaController($controller, $action, $id)
 {
-    if ($action || $action == 0) {
+    if ($action) {
         if (is_numeric($action)) {
             $controller->edit($action);
         } elseif ($action === 'delete') {
-            $controller->deleteMovie($action);
+            $controller->deleteMovie($id);
         } elseif ($action === 'edit') {
-            $controller->edit($action);
+            $controller->edit($id);
         } else {
             $controller->index();
         }
@@ -49,14 +50,21 @@ function handleCinemaController($controller, $action)
     }
 }
 
-
-function handleRestaurantController($controller, $action)
+function handleRestaurantController($controller, $action, $id)
 {
     if ($action) {
-        if (is_numeric($action)) {
-            $controller->editMenu($action);
-        } elseif ($action === 'edit') {
-            $controller->editMenu(null);
+        if (is_numeric($id)) {
+            if ($action === 'details') {
+                $controller->details($id);
+            } elseif ($action === 'edit') {
+                $controller->edit($id);
+            } elseif ($action === 'delete') {
+                $controller->deleteRestaurant($id);
+            } else {
+                render404();
+            }
+        } elseif ($action === 'edit' && $id === 'new') {
+            $controller->edit(null); // For creating a new restaurant
         } else {
             render404();
         }

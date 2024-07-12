@@ -1,4 +1,6 @@
-<!ELEMENT fiche (coordonnees, description_restaurant?, carte?, menus?)>
+<!ELEMENT restaurants (restaurant+)>
+
+<!ELEMENT restaurant (coordonnees, description_restaurant?, carte?, menus?)>
 <!ELEMENT coordonnees (nom, adresse, restaurateur)>
 <!ELEMENT nom (#PCDATA)>
 <!ELEMENT adresse (#PCDATA)>

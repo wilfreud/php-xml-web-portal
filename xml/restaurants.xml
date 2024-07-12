@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE restaurants SYSTEM "../dtd/restaurant.dtd">
+<restaurants>
+  <restaurant>
+    <coordonnees>
+      <nom>Le Gourmet</nom>
+      <adresse>123 Rue de Paris, 75001 Paris</adresse>
+      <restaurateur>Jean Dupont</restaurateur>
+    </coordonnees>
+    <description_restaurant>
+      <paragraphe>Le restaurant <important>Le Gourmet</important> est réputé pour ses plats traditionnels.</paragraphe>
+      <paragraphe>
+        <image url="http://example.com/image1.jpg" position="gauche"/>
+        <important>Un lieu cosy et chaleureux</important>
+      </paragraphe>
+      <liste>
+        <item>Ambiance familiale</item>
+        <item>Service impeccable</item>
+      </liste>
+    </description_restaurant>
+    <carte>
+      <plat id="plat1" type="entree">
+        <nom>Salade César</nom>
+        <description_plat>Salade fraîche avec des <important>croutons</important> et du parmesan.</description_plat>
+        <prix devise="EUR">12</prix>
+      </plat>
+      <plat id="plat2" type="plat">
+        <nom>Boeuf Bourguignon</nom>
+        <description_plat>Un plat <important>traditionnel</important> français.</description_plat>
+        <prix devise="EUR">20</prix>
+      </plat>
+      <plat id="plat3" type="dessert">
+        <nom>Tarte Tatin</nom>
+        <description_plat>Une délicieuse tarte aux pommes.</description_plat>
+        <prix devise="EUR">8</prix>
+      </plat>
+    </carte>
+    <menus ordre="prix">
+      <menu>
+        <titre>Menu Gourmand</titre>
+        <description_menu>Un menu pour les fins gourmets.</description_menu>
+        <prix devise="EUR">35</prix>
+        <plats>
+          <plat_ref ref="plat1"/>
+          <plat_ref ref="plat2"/>
+          <plat_ref ref="plat3"/>
+        </plats>
+      </menu>
+    </menus>
+  </restaurant>
+</restaurants>
