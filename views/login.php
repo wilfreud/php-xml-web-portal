@@ -1,22 +1,7 @@
-<?
-session_start();
-
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     $username = $_POST['username'];
-//     $password = $_POST['password'];
-
-//     // Exemple simple, à remplacer par une méthode plus sécurisée
-//     if ($username === 'admin' && $password === 'admin') {
-//         $_SESSION['logged_in'] = true;
-//         header('Location: /tp-portail');
-//         exit;
-//     } else {
-//         echo "Identifiants incorrects.";
-//     }
-// }
-
-// 
+<?php
+// session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -28,7 +13,7 @@ session_start();
 
 <body>
     <h1>Connexion</h1>
-    <form method="POST">
+    <form method="POST" action="/tp-portail/login">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br><br>

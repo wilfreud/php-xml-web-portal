@@ -23,6 +23,9 @@ if (!empty($uriSegments[$controller_index])) {
     $id = $uriSegments[$controller_index + 2] ?? null;
 
     switch ($controller) {
+        case "":
+            $authController->home();
+            break;
         case 'cinema':
             handleCinemaController($cinemaController, $action, $id);
             break;
@@ -74,7 +77,7 @@ function handleRestaurantController($controller, $action, $id)
                 render404();
             }
         } elseif ($action === 'edit') {
-            $controller->edit($action); // For creating a new restaurant
+            $controller->edit($action);
         } else {
             render404();
         }

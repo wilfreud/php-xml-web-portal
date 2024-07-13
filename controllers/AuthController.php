@@ -13,15 +13,18 @@ class AuthController
             if ($username === 'admin' && $password === 'admin') {
                 $_SESSION['logged_in'] = true;
                 ViewRenderer::render('index');
+                return;
                 // exit;
             } else {
                 // Handle login failure
                 ViewRenderer::render('login', ['error' => 'Invalid username or password']);
             }
         }
+    }
 
-        // Render the login view
-        require_once "views/login.php";
+    public function home()
+    {
+        ViewRenderer::render('index');
     }
 
     public function logout()
