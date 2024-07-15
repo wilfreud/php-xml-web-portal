@@ -13,6 +13,10 @@
 
 <body>
     <h1>Connexion</h1>
+    <?php if (isset($error)) : ?>
+        <p style="color: red;"><?= $error ?></p>
+    <?php endif; ?>
+    <hr>
     <form method="POST" action="/tp-portail/login">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>

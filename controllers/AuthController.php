@@ -5,6 +5,7 @@ class AuthController
 {
     public function login()
     {
+        $error = null;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -12,18 +13,21 @@ class AuthController
             // Simple authentication check (replace with your logic)
             if ($username === 'admin' && $password === 'admin') {
                 $_SESSION['logged_in'] = true;
-                ViewRenderer::render('index');
+                header('Location: /tp-portail/');
+                // ViewRenderer::render('index', ['username' => $username]);
                 return;
                 // exit;
             } else {
-                // Handle login failure
-                ViewRenderer::render('login', ['error' => 'Invalid username or password']);
+                $error = 'Invalid username or password';
             }
         }
+        // Handle login failure
+        ViewRenderer::render('login', ['error' => $error]);
     }
 
     public function home()
     {
+        // header('Location: /tp-portail/');
         ViewRenderer::render('index');
     }
 

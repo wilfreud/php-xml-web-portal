@@ -1,5 +1,4 @@
 <?php
-// index.php
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        a {
+        .btn-like {
             display: inline-block;
             margin: 10px;
             padding: 15px 25px;
@@ -38,7 +37,7 @@
             transition: background-color 0.3s;
         }
 
-        a:hover {
+        .btn-like:hover {
             background-color: #0056b3;
         }
     </style>
@@ -55,8 +54,19 @@
 
     <div class="container">
         <h1>Bienvenue sur le Portail</h1>
-        <a href="/tp-portail/cinema">Cinemas</a>
-        <a href="/tp-portail/restaurant">Restaurants</a>
+        <a class='btn-like' href="/tp-portail/cinema">Cinemas</a>
+        <a class='btn-like' href="/tp-portail/restaurant">Restaurants</a>
+
+        <div>
+            <?php
+            // print_r($_SESSION);
+            if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+                echo '<a href="/tp-portail/logout">Déconnexion</a>';
+            } else {
+                echo '<a href="/tp-portail/login">Connexion</a>';
+            }
+            ?>
+        </div>
     </div>
 
 </body>

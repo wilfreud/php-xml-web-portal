@@ -41,7 +41,7 @@
     </ul>
 
     <div>
-        <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) : ?>
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) : ?>
             <a href="/tp-portail/restaurant/edit/<?php echo $id; ?>">Modifier</a>
             <form method="POST" action="/tp-portail/restaurant/delete/<?php echo $id; ?>" style="display:inline;">
                 <button type="submit">Supprimer</button>

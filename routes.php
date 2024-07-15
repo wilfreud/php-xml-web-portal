@@ -43,7 +43,7 @@ if (!empty($uriSegments[$controller_index])) {
             break;
     }
 } else {
-    render404();
+    $authController->home();
 }
 
 function handleCinemaController($controller, $action, $id)

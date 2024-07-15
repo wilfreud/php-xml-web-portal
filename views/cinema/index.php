@@ -28,9 +28,11 @@
 
 <body>
     <h1>Films</h1>
-    <form method="get" action="/tp-portail/cinema/edit">
-        <button type="submit">Ajouter</button>
-    </form>
+    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) : ?>
+        <form method="get" action="/tp-portail/cinema/edit">
+            <button type="submit">Ajouter</button>
+        </form>
+    <?php endif; ?>
     <hr />
     <div>
         <?php
@@ -60,11 +62,11 @@
             echo "</ul>";
 
             echo "<div>";
-            echo "<form method='get' action='/tp-portail/cinema/$count'>" .
-                "<button type='submit'>Editer</button>
+            if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+                echo "<form method='get' action='/tp-portail/cinema/$count'>" .
+                    "<button type='submit'>Editer</button>
                 </form>";
 
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
                 echo "<form method='post' action='/tp-portail/cinema/delete/$count'>" .
                     "<button type='submit'>Supprimer</button>
                          </form>";
@@ -74,6 +76,7 @@
 
 
             echo "</div>";
+            echo "<hr />";
             $count++;
         }
         ?>

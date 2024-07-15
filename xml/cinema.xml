@@ -128,36 +128,5 @@
       </paragraphe>
     </description>
   </film>
-  <film>
-    <titre>Interstellar</titre>
-    <duree>2h 49mn</duree>
-    <genre>Sci-FI</genre>
-    <realisateur>Christopher Nollan</realisateur>
-    <acteurs>
-      <acteur>Mathew McConaughey</acteur>
-      <acteur>Anne Hathaway</acteur>
-      <acteur>Jessica Chastain</acteur>
-    </acteurs>
-    <anneeProduction>2014</anneeProduction>
-    <langue>Anglais</langue>
-    <presse>4.6/5</presse>
-    <spectateur>4.8/5</spectateur>
-    <description>
-      <paragraphe>
-        <intrigue>Un groupe d'explorateurs utilise un trou de ver r&#xE9;cemment d&#xE9;couvert pour
-          surpasser les limites du voyage spatial humain et conqu&#xE9;rir les vastes distances
-          impliqu&#xE9;es dans un voyage interstellaire.</intrigue>
-        <horaires>
-          <horaire id="66916c7cf1c99">
-            <jour>Lundi|Mercredi|Vendredi</jour>
-            <heure>13:00|16:30|20:00</heure>
-          </horaire>
-          <horaire id="66916c7cf1ca5">
-            <jour>Samedi|Dimanche</jour>
-            <heure>10:00|14:00|18:00</heure>
-          </horaire>
-        </horaires>
-      </paragraphe>
-    </description>
-  </film>
+  
 </cinema>

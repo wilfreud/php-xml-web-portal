@@ -20,7 +20,7 @@
                 <a href="/tp-portail/restaurant/details/<?php echo $count; ?>">
                     <?php echo htmlspecialchars($restaurant->coordonnees->nom); ?>
                 </a>
-                <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) : ?>
+                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) : ?>
                     <form method="POST" action="/tp-portail/restaurant/delete/<?php echo $count; ?>" style="display:inline;">
                         <button type="submit">Supprimer</button>
                     </form>
@@ -30,7 +30,9 @@
             <?php $count++; ?>
         <?php endforeach; ?>
     </ul>
-    <a href="/tp-portail/restaurant/edit">Ajouter un Restaurant</a>
+    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) : ?>
+        <a href="/tp-portail/restaurant/edit">Ajouter un Restaurant</a>
+    <?php endif; ?>
 </body>
 
 </html>

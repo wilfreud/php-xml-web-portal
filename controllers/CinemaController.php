@@ -171,7 +171,7 @@ class CinemaController
     public function deleteMovie($id)
     {
 
-        if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+        if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
             ViewRenderer::render('errors/401');
         }
 
